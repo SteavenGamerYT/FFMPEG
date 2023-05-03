@@ -1,0 +1,1 @@
+mkdir Transcoded-Playable; for i in *.mp4; do ffmpeg -i "$i" -c:v libx264 -crf 24 -pix_fmt yuv420p -tune film -c:a aac -b:a 192k -ar 44100 -vol 300 -strict -2 -speed fastest "./Transcoded-Playable/${i%.*}.mp4"; done
